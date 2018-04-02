@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Attributes</title>
+</head>
+<body>
+Email：<input type="email" name="user_email" style="width: 200px" form="form01" autocomplete="off" autofocus/><br/>
+<form action="" method="get" id="form01">
+    URL：<input type="url" name="user_url" style="width: 200px"/><br/>
+    Number：<input type="number" name="points" min="1" max="100" step="2"
+                  style="width: 200px"/><br/>
+    Range：1<input type="range" name="points" min="1" max="100" step="2" style="width: 200px"/>100<br/>
+    Date: <input type="date" name="user_date" style="width: 200px"/><br/>
+    Time: <input type="time" name="user_time" style="width: 200px"/><br/>
+    DateTime: <input type="datetime-local" name="user_datetime" style="width: 200px"/><br/>
+    Search: <input type="search" name="googlesearch" style="width: 200px"/><br/>
+    Text: <input type="text" name="text" style="width: 200px" pattern="\d{3}" placeholder="请输入IP地址" required/><br/>
+    Color：<input type="color" name="favcolor" style="width: 200px"/><br/>
+    Tel: <input type="tel" name="usrtel" style="width: 200px"/><br/>
+    File: <input type="file" multiple><br/>
+    <keygen name="security"></keygen>
+    <input type="submit"/></form>
+</body>
+</html>

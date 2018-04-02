@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Storage</title>
+</head>
+<body>
+<script type="text/javascript">
+    // console.log(typeof ("Storage"));
+    // console.log(localStorage);
+    // console.log(sessionStorage);
+
+    var storage = localStorage;
+    // var storage = sessionStorage;
+    storage.setItem("name","zhangsan");
+    storage.setItem("age",18);
+    console.log(storage.getItem("name"));
+    console.log(storage.getItem("age"));
+    console.log(storage.key(0));
+    console.log(storage.key(1));
+
+</script>
+</body>
+</html>

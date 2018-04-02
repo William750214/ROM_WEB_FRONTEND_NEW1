@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drag & Drop2</title>
+    <style type="text/css">
+        #div1, #div2 {
+            float: left;
+            width: 198px;
+            height: 66px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }    </style>
+    <script type="text/javascript">
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("Text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(data));
+        }    </script>
+</head>
+<body>
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <!--<img src="../images/settings.png" draggable="true"-->
+         <!--ondragstart="drag(event)" id="drag1" width="108"-->
+         <!--height="58"/>-->
+    <button draggable="true" ondragstart="drag(event)" id="drag1">获取坐标</button>
+</div>
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</body>
+</html>
