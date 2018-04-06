@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Indexed DB</title>
+</head>
+<body>
+<script type="text/javascript">
+    // window.indexedDB=window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB;
+    // if(window.indexedDB){
+    //     alert("您的浏览器支持IndexedDB数据库。");
+    // } else{
+    //     alert("您的浏览器不支持IndexedDB数据库。");
+    // }
+
+    request = indexedDB.open('testDB', '2');
+
+    request.onsuccess = function (ev) {
+        console.log("Success!");
+        var db = ev.target.result;
+
+        var transaction = db.transaction(['students'], "readwrite");
+        var studentsStore = transaction.objectStore('students');
+
+        var student01 = {
+            'id': 1,
+            'name': 'zhangsan',
+            'age': 38
+        };
+        var student02 = {
+            'id': 2,
+            'name': 'lisi',
+            'age': 28
+        };
+
+        // var objectRequst = studentsStore.put(student01);
+        // var objectRequst = studentsStore.put(student02);
+        // objectRequst.onsuccess = function (ev2) {
+        //     console.log(this.result);
+        // };
+
+        // var objectRequst = studentsStore.delete(2);
+        // objectRequst.onsuccess = function (ev2) {
+        //     console.log("Delete Success!");
+        // };
+
+        var objectRequst = studentsStore.get(1);
+        objectRequst.onsuccess = function (ev2) {
+            console.log(this.result.id + " " + this.result.name + " " + this.result.age);
+        };
+
+        console.log("Finished!")
+
+        // db.close();
+
+        // console.log(db);
+    };
+
+    request.onerror = function (ev) {
+        console.log("Error!");
+
+    };
+
+    request.onupgradeneeded = function (ev) {
+        console.log("Upgrade!");
+
+        var db = ev.target.result;
+        if (!db.objectStoreNames.contains("students")) {
+            var objectStore = db.createObjectStore("students", {keyPath: "id"});
+        }
+
+        if (!db.objectStoreNames.contains("teachers")) {
+            var objectStore = db.createObjectStore("teachers", {keyPath: "id"});
+        }
+
+    };
+
+
+</script>
+</body>
+</html>
