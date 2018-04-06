@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Socket</title>
+    <script type="text/javascript">
+        var ws = null;
+
+        function startWebSocket() {
+            ws = new WebSocket("ws://localhost:8080/getServer");
+
+            ws.onmessage = function (evt) {
+                console.info(evt.data);
+                document.getElementById('receiveTxt').value = evt.data;
+            };
+
+            ws.onclose = function (evt) {
+                console.info(evt);
+            };
+
+            ws.onopen = function (evt) {
+                console.info(evt);
+            };
+        }
+
+
+        function stopWebSocket() {
+            ws.close();
+        }
+
+        function sendMessage() {
+            ws.send(document.getElementById('sendTxt').value);
+        }
+    </script>
+</head>
+<body>
+<button onclick="startWebSocket()">Start Web Socket</button>
+<button onclick="stopWebSocket()">Stop Web Socket</button>
+<br/>
+<br/>
+Send Message：<input type="text" id="sendTxt"/>
+<button onclick="sendMessage()">Send Message</button>
+<br/>
+Receive Message：<input type="text" id="receiveTxt"/>
+</body>
+</html>

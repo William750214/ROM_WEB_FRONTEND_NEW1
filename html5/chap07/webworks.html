@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Works</title>
+</head>
+<body>
+<div id="result" style="width: 500px;height: 100px;background-color: aquamarine"></div>
+<button onclick="closeWork()">Click me!</button>
+<script type="text/javascript">
+    function closeWork() {
+        w.terminate();
+    }
+    w = new Worker("demo_workers.js");
+    w.onmessage = function (event) {
+        document.getElementById("result").innerHTML = event.data;
+    };
+</script>
+</body>
+</html>

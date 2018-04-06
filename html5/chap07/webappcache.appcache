@@ -1,0 +1,11 @@
+CACHE MANIFEST
+/theme.css
+/logo.gif
+/main.js
+
+NETWORK:
+login.php
+*    代表所有
+
+FALLBACK:
+/html/ /offline.html
