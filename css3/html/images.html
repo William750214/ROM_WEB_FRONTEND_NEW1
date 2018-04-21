@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Images</title>
+    <style type="text/css">
+        img {
+            border: 1px solid yellowgreen;
+            border-radius: 18px;
+
+            /*max-width: 100%;*/
+            /*height: auto;*/
+        }
+
+        #div01 {
+            position: absolute;
+            top: 8px;;
+            left: 16px;
+        }
+
+        .blur {
+            -webkit-filter: blur(4px);
+            filter: blur(4px);
+        }
+
+    </style>
+</head>
+<body>
+<!--<img src="../images/border.png" width="500px" height="300px"/>-->
+<!--<img src="../images/border.png" width="800px"/>-->
+<div>
+    <img src="../images/border.png" width="500px" height="300px" class="blur"/>
+    <div id="div01">Hello Images!</div>
+</div>
+</body>
+</html>

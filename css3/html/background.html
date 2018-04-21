@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Background</title>
+    <style type="text/css">
+        #div01 {
+            width: 500px;
+            height: 200px;
+            background-color: yellowgreen;
+
+            border: 20px solid brown;
+            padding: 20px;
+
+            /*background-image: url("./images/border.png"), url("./images/settings.png");*/
+            /*background-repeat: no-repeat, repeat;*/
+            /*background-position: bottom right, top left;*/
+
+            /*background: url("./images/border.png") no-repeat bottom right, url("./images/settings.png") repeat top left;*/
+
+            background-image: url("../images/border.png");
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            /*background-size: 30px 30px;*/
+            /*background-size: 100% 100%;*/
+            background-origin: content-box;
+            background-clip: content-box;
+        }
+    </style>
+</head>
+<body>
+<div id="div01"></div>
+</body>
+</html>

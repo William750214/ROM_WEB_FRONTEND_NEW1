@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex Box</title>
+    <style type="text/css">
+        .container {
+            width: 500px;
+            height: 200px;
+            background-color: yellowgreen;
+
+            border: 1px solid brown;
+
+            display: flex;
+            /*direction: rtl;*/
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            align-content: space-around;
+
+        }
+
+        .element {
+            width: 50%;
+            height: 50px;
+            background-color: yellow;
+
+            border: 1px solid brown;
+
+            /*margin: 10px;*/
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="element">Div01</div>
+    <div class="element" style="flex: 1">Div02</div>
+    <div class="element" style="flex: 1">Div03</div>
+    <div class="element" style="flex: 1">Div04</div>
+    <!--<div class="element">Div05</div>-->
+    <!--<div class="element">Div06</div>-->
+    <!--<div class="element">Div07</div>-->
+    <!--<div class="element">Div08</div>-->
+</div>
+</body>
+</html>

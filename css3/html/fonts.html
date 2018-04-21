@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fonts</title>
+    <style type="text/css">
+        @font-face {
+            font-family: myFont01;
+            src: url("../fonts/SerendityScript.woff");
+            font-weight: bold;
+        }
+
+        #div01 {
+            width: 500px;
+            height: 200px;
+            font-size: 28px;
+            background-color: yellowgreen;
+            text-shadow: 5px 5px 5px #FF0000;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            word-wrap: break-word;
+
+            font-family: myFont01;
+        }
+    </style>
+</head>
+<body>
+<div id="div01">This is a long wordwordwordwordwordwordwordwordwordwordwordwordwordwordwordwordword.</div>
+</body>
+</html>
